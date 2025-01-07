@@ -107,19 +107,18 @@ for i, post in enumerate(sample_posts, 1):
     print("\n" + "="*80)
 
     def analyze_aspect_sentiment(doc):
-    """Analyze sentiment towards specific aspects/features"""
-    aspects = {}
-    
-    for token in doc:
-        # Look for nouns that have sentiment-bearing modifiers
-        if token.pos_ == "NOUN":
-            modifiers = [mod for mod in token.children if mod.pos_ in ("ADJ", "ADV")]
-            if modifiers:
-                aspect_phrase = f"{' '.join([mod.text for mod in modifiers])} {token.text}"
-                sentiment = analyze_phrase_sentiment(aspect_phrase)
-                aspects[token.text] = sentiment
-    
-    return aspects
+        aspects = {}
+        
+        for token in doc:
+            # Look for nouns that have sentiment-bearing modifiers
+            if token.pos_ == "NOUN":
+                modifiers = [mod for mod in token.children if mod.pos_ in ("ADJ", "ADV")]
+                if modifiers:
+                    aspect_phrase = f"{' '.join([mod.text for mod in modifiers])} {token.text}"
+                    sentiment = analyze_phrase_sentiment(aspect_phrase)
+                    aspects[token.text] = sentiment
+        
+        return aspects
 
 def extract_opinion_patterns(doc):
     """Extract opinion patterns using dependency relations"""
