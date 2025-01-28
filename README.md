@@ -63,7 +63,7 @@ python scripts/integrated_analysis.py
 Detailed documentation for each component can be found in the respective report files in the `reports/` directory.
 
 ### License
-This project is part of academic coursework for Semantic Analysis unit at [Your University].
+This project is part of academic coursework for Semantic Analysis unit at Jomo Kenyatta University of Agriculture and Technology.
 
 ### Contact
 For any queries regarding this project, please contact any of the team members:
